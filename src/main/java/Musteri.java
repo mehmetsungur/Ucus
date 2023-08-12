@@ -25,7 +25,9 @@ public class Musteri {
     }
 
     public void setMusteriId(String musteriId) {
-        this.musteriId = musteriId;
+        id++;
+        String arr[] = getIsim().split(" ");
+        this.musteriId =String.valueOf(arr[0].charAt(0) + arr[1].charAt(0) + id);
     }
 
     public static int getMusteriPassword() {
@@ -58,6 +60,16 @@ public class Musteri {
     }
 
     public void signIn(){
-
+        do{
+            System.out.println("Müşteri eklemek ister misiniz? (E/H)");
+            char onay = scan.next().toLowerCase().charAt(0);
+            if (onay == 'h'){
+                break;
+            }else if(onay == 'e'){
+                System.out.print("Lütfen isminizi giriniz: ");
+                setIsim(scan.nextLine());
+                setMusteriId(musteriId);
+            }
+        }while (true);
     }
 }
