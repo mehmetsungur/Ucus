@@ -67,9 +67,16 @@ public class Musteri {
                 break;
             }else if(onay == 'e'){
                 System.out.print("Lütfen isminizi giriniz: ");
+                scan.nextLine();
                 setIsim(scan.nextLine());
                 setMusteriId(musteriId);
+                setMusteriPassword(++musteriPassword);
+                musteriEkle();
+            }else {
+                System.out.println("Lütfen E veya H harflerinden birini giriniz");
             }
         }while (true);
+        System.out.println(isimId);
+        System.out.println(isimPwd);
     }
 }
